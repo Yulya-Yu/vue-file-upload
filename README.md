@@ -1,5 +1,7 @@
 # vue-app
 
+- В версии в ветке `main` можно загрузить только один файл, а в ветке `multiple-img-mode` несколько.
+
 ## Project setup
 ```
 npm install

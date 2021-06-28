@@ -4,27 +4,14 @@
       <label class="upload-btn"> Upload
         <input type="file" id="file"  ref="file" @change="getFile()"/>
       </label>
-<!--      <FileUploaderConstructor-->
-<!--          v-bind="{-->
-<!--              multiple: true,-->
-<!--              drop: true,-->
-<!--              dropDirectory: true,-->
-<!--              fileDrop: true,-->
-<!--              lengthText: 15,-->
-<!--              showOnlyFiles: true-->
-<!--            }"-->
-<!--          @changeFile="check"-->
-<!--      />-->
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-// import FileUploaderConstructor from "./components/FileUploaderConstructor";
 export default {
   name: 'App',
-  // components: {FileUploaderConstructor},
   data() {
     return {
       file: ''
@@ -36,11 +23,6 @@ export default {
       console.log(this.file)
       this.uploadFile()
     },
-    // check(file){
-    //   this.uploadFile(file)
-    //   console.log(file, 'check')
-    // },
-
     uploadFile() {
       let formData = new FormData();
       formData.append('file', this.file);
@@ -57,7 +39,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style>
@@ -69,7 +50,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   height: 100%;
-
 }
 .btn-container {
   height: 800px;
@@ -98,10 +78,7 @@ export default {
 .upload-btn:active {
   background-color: #4AAE8C;
 }
-
 input[type="file"] {
   display: none;
 }
-
-
 </style>
