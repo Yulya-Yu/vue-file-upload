@@ -2,7 +2,7 @@
   <div id="app">
     <div class="btn-container">
       <label class="upload-btn"> Upload
-        <input type="file" id="file"  ref="file" @change="handleFileUpload()"/>
+        <input type="file" id="file"  ref="file" @change="getFile()"/>
       </label>
 <!--      <FileUploaderConstructor-->
 <!--          v-bind="{-->
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    handleFileUpload(){
+    getFile(){
       this.file = this.$refs.file.files[0];
       console.log(this.file)
       this.uploadFile()
