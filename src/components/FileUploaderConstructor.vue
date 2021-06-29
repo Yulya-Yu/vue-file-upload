@@ -4,7 +4,6 @@
         v-if="$refs.uploadConstructor && $refs.uploadConstructor.dropActive && fileDrop"
         class="drop-active"
     >
-      Drop file here
     </div>
     <div class="files-background">
       <file-upload
@@ -47,6 +46,9 @@ export default {
     }
   },
   mounted() {
+    this.$root.$on('clearUploaderConstructor', () => {
+      this.file.length = 0
+    })
   },
   methods: {},
   computed: {},
@@ -72,10 +74,10 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 195px;
-  height: 112px;
+  width: 295px;
+  height: 170px;
   border: 1px dashed #a5a5a5;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 /deep/.file-label {
   display: flex;
@@ -90,7 +92,7 @@ export default {
 /deep/div {
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 24px;
   line-height: 16px;
   color: #1284ff;
 }
@@ -98,7 +100,7 @@ export default {
   margin-top: 6px;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 24px;
   line-height: 14px;
   color: #c1c1c1;
 }
